@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="_css/estilo.css?v=6">
+  <link rel="stylesheet" href="_css/estilo.css?v=7">
 </head>
 <body>
 
@@ -133,5 +133,30 @@
 /* garantias de responsividade */
 img{ max-width:100%; height:auto; }
 html, body{ overflow-x: hidden; } /* evita barra lateral no mobile */
+
+/* evita que o rodapé fique escondido pela barra do navegador no mobile */
+:root { --safe-bottom: env(safe-area-inset-bottom); }
+
+body {
+  /* espaço extra no fim da página */
+  padding-bottom: calc(24px + var(--safe-bottom));
+}
+
+.rodape-louro {
+  margin-bottom: calc(24px + var(--safe-bottom));
+}
+
+/* garante que as coroas não “saiam” do container */
+.rodape-louro img {
+  display: block;
+  height: auto;
+}
+
+/* mobile: deixa tudo um pouco menor para caber confortável */
+@media (max-width: 480px){
+  .louro-pequena { width: 24px; }
+  .rodape-louro { width: 92%; gap: 6px; }
+}
+
 
 
